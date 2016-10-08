@@ -37,7 +37,8 @@ entity ALU is
            alu_output : out  STD_LOGIC_VECTOR (3 downto 0); -- output signal of ALU ( 4 bit)
            command : in STD_LOGIC_VECTOR (3 downto 0); -- one bit signal that tells us if ALU is busy or not
 			  busy : inout STD_LOGIC_VECTOR (0 downto 0); -- clock input
-			  clk : in STD_LOGIC);
+			  clk : in STD_LOGIC 
+			  );
 end ALU;
 
 architecture Behavioral of ALU is
@@ -47,12 +48,12 @@ begin
 CALCULATE_RESULT : process(clk)
 begin
 
-if rising_edge(clk) then
+if clk= '1' and clk'event then
 	
 
-		if command = "0001" then -- addition of input 
+		if command = "0001" then 
 			busy <= "1";
-			alu_output <= alu_input_1 + alu_input_2;
+			alu_output <= alu_input_1 + alu_input_2;-- addition of input 
 			busy <= "0";
 		elsif command = "0010" then
 			busy <= "1";
@@ -74,13 +75,13 @@ if rising_edge(clk) then
 			busy <= "1";
 			alu_output <= not alu_input_1; -- NOT operation
 			busy <= "0";
-		elsif command = "0111" then --shift right
+		elsif command = "0111" then 
 			busy <= "1";
-			alu_output <= alu_input_1 - alu_input_1;
+			alu_output <= alu_input_1 - alu_input_1; --shift right
 			busy <= "0";
-		elsif command = "1000" then --shift left
+		elsif command = "1000" then 
 			busy <= "1";
-			alu_output <= alu_input_1 + alu_input_1;
+			alu_output <= alu_input_1 + alu_input_1; --shift left
 			busy <= "0";
 		
 		end if; 
