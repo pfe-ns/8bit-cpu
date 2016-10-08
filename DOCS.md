@@ -1,6 +1,6 @@
 #8-bit Processor
 
-*9.30.2016* - First successfull test of ALU addition  
+*30.9.2016* - First successfull test of ALU addition  
 *8.10.2016* - Added Control Unit
 
 # ALU 
