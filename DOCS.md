@@ -1,7 +1,7 @@
 #8-bit Processor
 
 *30.9.2016* - First successfull test of ALU addition  
-*8.10.2016* - Added Control Unit
+*8.10.2016* - Added Control Unit , ALU completely working  
 
 # ALU 
 **consists of 6 signals**  
