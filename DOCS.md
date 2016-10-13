@@ -2,6 +2,7 @@
 
 *30.9.2016* - First successfull test of ALU addition  
 *8.10.2016* - Added Control Unit , ALU completely working  
+*13.10.2016* - Added Ram and more commands to Control Unit  
 
 # ALU 
 **consists of 6 signals**  
@@ -13,7 +14,15 @@ clk - clock input
 
 ##Control Unit 
 **consists of 6 signals but more will be added**  
-Ram_Input - command that we get from RAM  
+command - command that we get from RAM  
 alu_command - command that will be parsed to ALU  
 ram_command - command that will be parsed to RAM  
 clk - clock input for Control Unit (will be connected to ALU clock)    
+
+##RAM
+**consists of 5 signals
+clk - clock input  
+ram_data_in - input data  
+ram_data_out - output data  
+ram_address - address in RAM that we want write or read from  
+am_command - tells RAM that we  want to read ( 0 ) or write ( 1 )   
