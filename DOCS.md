@@ -19,7 +19,7 @@ alu_command - command that will be parsed to ALU
 ram_command - command that will be parsed to RAM  
 clk - clock input for Control Unit (will be connected to ALU clock)    
 
-##RAM
+###RAM
 **consists of 5 signals
 clk - clock input  
 ram_data_in - input data  
