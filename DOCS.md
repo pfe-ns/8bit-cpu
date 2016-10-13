@@ -5,7 +5,7 @@
 *13.10.2016* - Added Ram and more commands to Control Unit  
 
 # ALU 
-**consists of 6 signals **      
+**consists of 6 signals**      
 alu_input_1 - first ALU input ( 4 bit)  
 alu_input_2 - second ALU input ( 4 bit)  
 alu_output - output signal of ALU ( 4 bit)  
