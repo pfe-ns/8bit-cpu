@@ -5,7 +5,7 @@
 *13.10.2016* - Added Ram and more commands to Control Unit  
 
 # ALU 
-**consists of 6 signals**  
+**consists of 6 signals : **    
 alu_input_1 - first ALU input ( 4 bit)  
 alu_input_2 - second ALU input ( 4 bit)  
 alu_output - output signal of ALU ( 4 bit)  
@@ -13,14 +13,14 @@ busy - one bit signal that tells us if ALU is busy or not
 clk - clock input  
 
 ##Control Unit 
-**consists of 6 signals but more will be added**  
+**consists of 6 signals but more will be added : **    
 command - command that we get from RAM  
 alu_command - command that will be parsed to ALU  
 ram_command - command that will be parsed to RAM  
 clk - clock input for Control Unit (will be connected to ALU clock)    
 
 ###RAM
-**consists of 5 signals
+**consists of 5 signals: **  
 clk - clock input  
 ram_data_in - input data  
 ram_data_out - output data  
