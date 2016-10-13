@@ -20,8 +20,8 @@ ram_command - command that will be parsed to RAM
 clk - clock input for Control Unit (will be connected to ALU clock)    
 
 ###RAM
-**consists of 5 signals: **  
-clk - clock input  
+**consists of 5 signals: **     
+clk - clock input    
 ram_data_in - input data  
 ram_data_out - output data  
 ram_address - address in RAM that we want write or read from  
