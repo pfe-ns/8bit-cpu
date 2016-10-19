@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    16:57:11 10/13/2016 
+-- Create Date:    22:15:50 10/19/2016 
 -- Design Name: 
--- Module Name:    RAM - Behavioral 
+-- Module Name:    Register - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,40 +29,31 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity RAM is
+entity Register is
 
 	port(
-	
-		clk : IN STD_LOGIC;
-		ram_data_in : IN STD_LOGIC_VECTOR (7 downto 0); -- input data
-		ram_data_out : OUT STD_LOGIC_VECTOR (7 downto 0); -- output data
-		ram_address : IN STD_LOGIC_VECTOR (7 downto 0); -- address of data
-		ram_command : IN STD_LOGIC
-		
-	); 
+			
+			clk : IN STD_LOGIC; -- clock input
+			register_input : IN STD_LOGIC_VECTOR (7 downto 0); -- input data
+			register_data : IN STD_LOGIC_VECTOR (7 downto 0); -- internal data
+			register_output : IN STD_LOGIC_VECTOR (7 downto 0); -- output data
+			command : IN STD_LOGIC; 
+			
+	);
 
-end RAM;
+end Register;
 
-architecture Behavioral of RAM is
-
-	type Memory_Array is array (255 downto 0) of std_logic_vector (7 downto 0);
-	variable RAM : Memory_Array;
-	
+architecture Behavioral of Register is
 begin
 
 if clk= '1' and clk'event then
 
-	if ram_command = "0" -- read
-	
-		ram_data_out <= RAM(ram_address); -- ram_data_out = RAM[address]
-	
-	end if;
-
-	if ram_command = "1" -- read
-	
-		RAM(ram_address) <= ram_data_in; -- RAM[address] = ram_data_in
-	
-	end if;
+		if command = '1' then
+			register_data <= register_input; -- reading from bus
+		elsif command = '0' then
+			register_output <= register_data; -- writing to bus
+		
+		end if;
 
 end if;
 

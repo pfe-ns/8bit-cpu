@@ -4,6 +4,7 @@
 *30.9.2016* - First successfull test of ALU addition  
 *8.10.2016* - Added Control Unit , ALU completely working  
 *13.10.2016* - Added Ram and more commands to Control Unit  
+*19.10.2016* -- Added Registers ( Only internal)
 
 ## ALU
 ### Signals
@@ -33,6 +34,12 @@ TODO: Add instructions
 
 ## Registers
 ### Internal registers
+`clk` - clock input  
+`register_input` - input data  
+`register_data` - internal register data  
+`register_output` - register output  
+`command`  - for wtiting or reading 
+
 ### GPIO Registers
 #### ADC
 #### DAC
