@@ -1,50 +1,50 @@
 # 8-bit Processor
 
 ## Updates:
-*30.9.2016* - First successfull test of ALU addition  
-*8.10.2016* - Added Control Unit , ALU completely working  
-*13.10.2016* - Added Ram and more commands to Control Unit  
-*19.10.2016* -- Added Registers ( Only internal)
+*30.9.2016.* - First successfull test of ALU addition  
+*8.10.2016.* - Added Control Unit , ALU completely working  
+*13.10.2016.* - Added Ram and more commands to Control Unit  
+*19.10.2016.* - Added Registers ( Only internal)  
+*27.10.2016.* - Added Program Counter
 
-## ALU
-### Signals
-`alu_input_1` - first ALU input ( 4 bit)  
-`alu_input_2` - second ALU input ( 4 bit)  
-`alu_output` - output signal of ALU ( 4 bit)  
+## ALU    
+`alu_input_1` - first ALU input ( 8 bit)  
+`alu_input_2` - second ALU input ( 8 bit)  
+`alu_output` - output signal of ALU ( 8 bit)  
 `busy` - one bit signal that tells us if ALU is busy or not  
-`clk` - clock input
-### Instructions
-TODO: Add instructions
+`clk` - clock input  
 
-## Control Unit
-### Signals
-`command` - command that we get from RAM  
-`alu_command` - command that will be parsed to ALU  
-`ram_command` - command that will be parsed to RAM  
-`clk` - clock input for Control Unit (will be connected to ALU clock)
-### Instructions
+## Control Unit     
+`command` - command that we get from RAM ( 8 bit)   
+`alu_command` - command that will be parsed to ALU ( 8 bit)     
+`ram_command` - command that will be parsed to RAM ( 1 bit)   
+`clk` - clock input for Control Unit (will be connected to ALU clock)    
 
-## RAM
-### Signals
+## RAM     
 `clk` - clock input    
-`ram_data_in` - input data  
-`ram_data_out` - output data  
-`ram_address` - address in RAM that we want write or read from  
-`ram_command` - tells RAM that we  want to read `0` or write `1`
+`ram_data_in` - input data (8 bit)  
+`ram_data_out` - output data ( 8 bit)    
+`ram_address` - address in RAM that we want write or read from ( 8 bit)  
+`ram_command` - tells RAM that we  want to read `0` or write `1` ( 1 bit)     
 
 ## Registers
 ### Internal registers
 `clk` - clock input  
-`register_input` - input data  
-`register_data` - internal register data  
-`register_output` - register output  
-`command`  - for wtiting or reading 
+`register_input` - input data ( 8 bit)  
+`register_data` - internal register data ( 8 bit)   
+`register_output` - register output ( 8 bit)   
+`command`  - for wtiting or reading (1 bit)   
 
 ### GPIO Registers
 #### ADC
 #### DAC
 
 ## Program counter
+`clk` - clock input     
+`pc_input` - Program Counter input (for loading value)      
+`pc_output` - output value   
+`pc_internal_state` - internal value   
+`pc_command` - Program Counter command   
 
 ## Memory address register
 
@@ -56,4 +56,4 @@ TODO: Add instructions
 ### RS232
 ### USB
 
-## Terminal over USB
+## USB controller

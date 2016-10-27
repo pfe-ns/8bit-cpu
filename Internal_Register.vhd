@@ -29,21 +29,24 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Register is
+entity Internal_Register is
 
 	port(
 			
 			clk : IN STD_LOGIC; -- clock input
 			register_input : IN STD_LOGIC_VECTOR (7 downto 0); -- input data
-			register_data : IN STD_LOGIC_VECTOR (7 downto 0); -- internal data
-			register_output : IN STD_LOGIC_VECTOR (7 downto 0); -- output data
-			command : IN STD_LOGIC; 
+			register_data : INOUT STD_LOGIC_VECTOR (7 downto 0); -- internal data
+			register_output : OUT STD_LOGIC_VECTOR (7 downto 0); -- output data
+			command : IN STD_LOGIC
 			
 	);
 
-end Register;
+end Internal_Register;
 
-architecture Behavioral of Register is
+architecture Behavioral of Internal_Register is
+begin
+
+REGISTER_PROCESS : process(clk)
 begin
 
 if clk= '1' and clk'event then
@@ -57,5 +60,6 @@ if clk= '1' and clk'event then
 
 end if;
 
-end Behavioral;
+end process;
 
+end Behavioral;

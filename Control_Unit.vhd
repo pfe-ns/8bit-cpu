@@ -36,6 +36,7 @@ entity Control_Unit is
 	command : IN STD_LOGIC_VECTOR(7 downto 0); -- comamnd that comes from memory
 	alu_command : INOUT STD_LOGIC_VECTOR(7 downto 0); -- command that we will parse to ALU
 	ram_command : INOUT STD_LOGIC; -- command that we will parse to RAM
+	pc_command : INOUT STD_LOGIC_VECTOR (3 downto 0); -- command tat we will parse to Program_Counter
 	clk : IN STD_LOGIC
 	
 	);
@@ -46,36 +47,41 @@ architecture Behavioral of Control_Unit is
 
 begin
 
-if clk= '1' and clk'event then
+CONTROL_PROCESS : process (clk)
+begin
+
+if clk = '1' and clk'event then
 		-- ALU commands
 		if command = "00000001" then 
 			alu_command <=  "00000001"; --addition of input 
 		elsif command = "00000010" then
-			alu_command <=  "00000010"; -- substraction of input signals
+			alu_command <=  "00000010" -- substraction of input signals
 		elsif command = "00000011" then
-			alu_command <=  "00000011"; -- AND operation
+			alu_command <=  "00000011" -- AND operation
 		elsif command = "00000100" then
-			alu_command <=  "00000100"; -- OR operation
+			alu_command <=  "00000100" -- OR operation
 		elsif command = "00000101" then
-			alu_command <=  "00000101"; -- XOR operation
+			alu_command <=  "00000101" -- XOR operation
 		elsif command = "00000110" then
-			alu_command <=  "00000110"; -- NOT operation
+			alu_command <=  "00000110" -- NOT operation
 		elsif command= "00000111" then
-			alu_command <=  "00000111"; --shift right
+			alu_command <=  "00000111" --shift right
 		elsif command = "00001000" then 
-			alu_command <=  "00001000"; --shift left
+			alu_command <=  "00001000" --shift left
 		
 		-- RAM commands
 		
 		elsif command = "00001001" then
-			ram_command <= "0"; -- read from ram
+			ram_command <= '1'; -- read from ram
 		elsif command = "00001010" then
-			ram_command = "1"; -- write to ram
+			ram_command <= '1'; -- write to ram
 		
 		
 		end if; 
 
 end if;
+
+end process;
 
 end Behavioral;
 
