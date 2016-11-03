@@ -35,7 +35,7 @@ entity ALU is
     Port ( alu_input_1 : IN  STD_LOGIC_VECTOR (7 downto 0); -- first ALU input ( 4 bit)
            alu_input_2 : IN STD_LOGIC_VECTOR (7 downto 0); -- second ALU input ( 4 bit)
            alu_output : OUT  STD_LOGIC_VECTOR (7 downto 0); -- output signal of ALU ( 4 bit)
-           command : IN STD_LOGIC_VECTOR (7 downto 0); -- one bit signal that tells us if ALU is busy or not
+           alu_command : IN STD_LOGIC_VECTOR (7 downto 0); -- one bit signal that tells us if ALU is busy or not
 			  busy : INOUT STD_LOGIC; 
 			  clk : IN STD_LOGIC -- clock input
 			  );
@@ -51,35 +51,35 @@ begin
 if clk= '1' and clk'event then
 	
 
-		if command = "00000001" then 
+		if alu_command = "00000001" then 
 			busy <= '1';
 			alu_output <= alu_input_1 + alu_input_2;-- addition of input 
 			busy <= '0';
-		elsif command = "00000010" then
+		elsif alu_command = "00000010" then
 			busy <= '1';
 			alu_output <= alu_input_1 - alu_input_2; -- substraction of input signals
 			busy <= '0';
-		elsif command = "00000011" then
+		elsif alu_command = "00000011" then
 			busy <= '1';
 			alu_output <= alu_input_1 and alu_input_2; -- AND operation
 			busy <= '0';
-		elsif command = "00000100" then
+		elsif alu_command = "00000100" then
 			busy <= '1';
 			alu_output <= alu_input_1 or alu_input_2; -- OR operation
 			busy <= '0';
-		elsif command = "00000101" then
+		elsif alu_command = "00000101" then
 			busy <= '1';
 			alu_output <= alu_input_1 xor alu_input_2; -- XOR operation
 			busy <= '0';
-		elsif command = "00000110" then
+		elsif alu_command = "00000110" then
 			busy <= '1';
 			alu_output <= not alu_input_1; -- NOT operation
 			busy <= '0';
-		elsif command = "00000111" then 
+		elsif alu_command = "00000111" then 
 			busy <= '1';
 			alu_output <= alu_input_1 - alu_input_1; --shift right
 			busy <= '0';
-		elsif command = "00001000" then 
+		elsif alu_command = "00001000" then 
 			busy <= '1';
 			alu_output <= alu_input_1 + alu_input_1; --shift left
 			busy <= '0';

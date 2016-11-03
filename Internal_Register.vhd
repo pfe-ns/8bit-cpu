@@ -37,7 +37,7 @@ entity Internal_Register is
 			register_input : IN STD_LOGIC_VECTOR (7 downto 0); -- input data
 			register_data : INOUT STD_LOGIC_VECTOR (7 downto 0); -- internal data
 			register_output : OUT STD_LOGIC_VECTOR (7 downto 0); -- output data
-			command : IN STD_LOGIC
+			register_command : IN STD_LOGIC
 			
 	);
 
@@ -51,9 +51,9 @@ begin
 
 if clk= '1' and clk'event then
 
-		if command = '1' then
+		if register_command = '1' then
 			register_data <= register_input; -- reading from bus
-		elsif command = '0' then
+		elsif register_command = '0' then
 			register_output <= register_data; -- writing to bus
 		
 		end if;

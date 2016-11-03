@@ -1,11 +1,12 @@
 # 8-bit Processor
 
 ## Updates:
-*30.9.2016.* - First successfull test of ALU addition  
-*8.10.2016.* - Added Control Unit , ALU completely working  
+*30.09.2016.* - First successfull test of ALU addition  
+*08.10.2016.* - Added Control Unit , ALU completely working  
 *13.10.2016.* - Added Ram and more commands to Control Unit  
 *19.10.2016.* - Added Registers ( Only internal)  
-*27.10.2016.* - Added Program Counter
+*27.10.2016.* - Added Program Counter  
+*03.11.2016.* - Added CPU.vhd and finished first successfull CPU test   
 
 ## ALU    
 `alu_input_1` - first ALU input ( 8 bit)  

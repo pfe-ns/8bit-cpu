@@ -37,7 +37,7 @@ entity RAM is
 		ram_data_in : IN STD_LOGIC_VECTOR (7 downto 0); -- input data
 		ram_data_out : OUT STD_LOGIC_VECTOR (7 downto 0); -- output data
 		ram_address : IN STD_LOGIC_VECTOR (7 downto 0); -- address of data
-		ram_command : IN STD_LOGIC;
+		ram_command : IN STD_LOGIC
 		
 	); 
 
