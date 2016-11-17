@@ -6,7 +6,8 @@
 *13.10.2016.* - Added Ram and more commands to Control Unit  
 *19.10.2016.* - Added Registers ( Only internal)  
 *27.10.2016.* - Added Program Counter  
-*03.11.2016.* - Added CPU.vhd and finished first successfull CPU test   
+*03.11.2016.* - Added CPU.vhd and finished first successfull CPU test  
+*17.11.2016.* - Added USB Controller  
 
 ## ALU    
 `alu_input_1` - first ALU input ( 8 bit)  
@@ -42,10 +43,10 @@
 
 ## Program counter
 `clk` - clock input     
-`pc_input` - Program Counter input (for loading value)      
-`pc_output` - output value   
-`pc_internal_state` - internal value   
-`pc_command` - Program Counter command   
+`pc_input` - Program Counter input (for loading value) ( 8 bit)        
+`pc_output` - output value ( 8 bit)   
+`pc_internal_state` - internal value ( 8 bit)   
+`pc_command` - Program Counter command ( 4 bit)
 
 ## Memory address register
 
@@ -58,3 +59,8 @@
 ### USB
 
 ## USB controller
+`clk` - clock input  
+`rx` - Byte that CPU will receive (8 bit)  
+`tx` - Byte that CPU will output (8 bit)  
+`data` - Received data or data that CPU will send (8 bit)    
+`USB_command` - 4 bit command that tells CPU to send or to receive data (4 bit)
