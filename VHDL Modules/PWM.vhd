@@ -45,7 +45,7 @@ end PWM;
 
 architecture Behavioral of PWM is
 
-signal counter : STD_LOGIC_VECTOR ( 7 downto 0);
+signal counter : STD_LOGIC_VECTOR ( 7 downto 0) := "00000000";
 
 begin
 
@@ -54,11 +54,11 @@ begin
 	
 	if rising_edge( clk ) then
 			
-			if to_integer(unsigned(counter)) > to_integer(unsigned(pwm_input)) then
-				pwm_output <= '1';
-			else 
-				pwm_output <= '0';
-			end if;
+        if to_integer(unsigned(counter)) < to_integer(unsigned(pwm_input)) then
+            pwm_output <= '1';
+        else 
+            pwm_output <= '0';
+        end if;
 				
 		if to_integer(unsigned(counter)) < 255 then
 				counter <= counter+1;
@@ -74,4 +74,3 @@ begin
 	
 
 end Behavioral;
-
