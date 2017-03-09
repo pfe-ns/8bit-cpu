@@ -39,5 +39,34 @@ function jmp(x){
 	Program_Counter = x;
 }
 
+function add_to_ram(instruction , operand){
+
+	RAM[Program_Counter][0] = instruction;
+	RAM[Program_Counter][1] = operand;
+
+}
+
+function parse(instruction,operand){
+
+		add_to_ram(instruction , operand);
+
+		if(instruction = "loda"){
+			loda(parseInt(operand));
+		}else if(instruction = "lodb"){
+			lodb(parseInt(operand));
+		}else if(instruction = "add"){
+			add(reg_A,reg_B);
+		}else if(instruction = "sub"){
+			sub(reg_A,reg_B);
+		}else if(instruction = "reada"){
+			reada();
+		}else if(instruction = "readb"){
+			readb();
+		}else if(instruction = "jmp"){
+			jmp(parseInt(operand));
+		}
+
+}
+
 
 
