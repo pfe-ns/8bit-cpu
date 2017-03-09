@@ -1,0 +1,40 @@
+body {
+    background-color: #222222;
+}
+
+.box {
+    background: #222222;
+    padding: 30px;
+}
+
+.do {
+    position: absolute;
+    width: 50%;
+    height: 250px;
+    top: 0;
+    left: 0;
+}
+
+.hist {
+    position: absolute;
+    width: 50%;
+    height: calc(100% - 250px);
+    top: 250px;
+    left: 0;
+}
+
+.alu {
+    position: absolute;
+    width: 50%;
+    height: 200px;
+    top: 0;
+    left: 50%;
+}
+
+.ram {
+    position: absolute;
+    width: 50%;
+    height: calc(100% - 200px);
+    top: 200px;
+    left: 50%;
+}

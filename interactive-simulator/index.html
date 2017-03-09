@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>8bit CPU</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="logic.js"></script>
+        <script src="jquery-3.1.1.min.js"></script>        
+        <link rel="stylesheet" type="text/css" href="semantic.min.css">
+        <script src="semantic.min.js"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <script>
+        $(document).ready(function() {
+            $('.ui.dropdown').dropdown();
+        });
+    </script>
+    <body>
+        <div class="box do">
+            <div class="ui left labeled input">
+                <div class="ui dropdown label">
+                    <div class="text">NOP</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item">LODA</div>
+                        <div class="item">LODB</div>
+                        <div class="item">READA</div>
+                        <div class="item">READB</div>
+                        <div class="item">ADD</div>
+                        <div class="item">SUB</div>
+                        <div class="item">JMP</div>
+                    </div>
+                </div>
+                <input type="text" placeholder="OPERAND">
+            </div>
+            <table>
+                <td>
+                    <button class="ui red button">PONIŠTI</button>
+                </td>
+                <td>
+                    <button class="ui green button">IZVRŠI</button>
+                </td>
+            </table>
+        </div>
+        <div class="box hist">
+            <div class="ui inverted segment">
+                <div class="ui inverted relaxed divided list">
+                    <div class="item">
+                    <div class="content">
+                        <div class="header">LODA</div>
+                        00000000
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box alu">
+            
+        </div>
+        <div class="box ram">
+            <table class="ui selectable inverted table">
+                <thead>
+                    <tr>
+                    <th>ADRESA</th>
+                    <th>OPKOD</th>
+                    <th>OPERAND</th>                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>NOP</td>
+                        <td>00000000</td>                        
+                    </tr>
+            </table>
+        </div>
+        <!--<img src="alu.svg" alt="">-->
+    </body>
+</html>
