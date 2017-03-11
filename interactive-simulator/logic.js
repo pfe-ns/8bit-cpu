@@ -41,14 +41,17 @@ function jmp(x){
 
 function add_to_ram(instruction , operand){
 
-	RAM[Program_Counter][0] = instruction;
-	RAM[Program_Counter][1] = operand;
+	RAM[Program_Counter] = [];
+	RAM[Program_Counter][0] = Program_Counter;
+	RAM[Program_Counter][1] = instruction;
+	RAM[Program_Counter][2] = operand;
 
 }
 
 function parse(instruction,operand){
 
 		add_to_ram(instruction , operand);
+		Program_Counter += 1;
 
 		if(instruction = "loda"){
 			loda(parseInt(operand));

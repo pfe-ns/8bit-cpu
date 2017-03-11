@@ -10,70 +10,91 @@
         <script src="semantic.min.js"></script>
         <link href="style.css" rel="stylesheet">
     </head>
-    <script>
-        $(document).ready(function() {
-            $('.ui.dropdown').dropdown();
-        });
-    </script>
     <body>
-        <div class="box do">
-            <div class="ui left labeled input">
-                <div class="ui dropdown label">
-                    <div class="text">NOP</div>
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <div class="item">LODA</div>
-                        <div class="item">LODB</div>
-                        <div class="item">READA</div>
-                        <div class="item">READB</div>
-                        <div class="item">ADD</div>
-                        <div class="item">SUB</div>
-                        <div class="item">JMP</div>
+        <div class="ui one column doubling stackable grid">
+            <div class="column">
+                <div class="ui left labeled input">
+                    <div class="ui dropdown label" id="operation-input">
+                        <div class="text">NOP</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item">LODA</div>
+                            <div class="item">LODB</div>
+                            <div class="item">READA</div>
+                            <div class="item">READB</div>
+                            <div class="item">ADD</div>
+                            <div class="item">SUB</div>
+                            <div class="item">JMP</div>
+                        </div>
                     </div>
+                    <input type="number" value="0" placeholder="OPERAND" id="operand-input" class="operand-input">
                 </div>
-                <input type="text" placeholder="OPERAND">
+                <center>
+                    <button class="ui green button" id="execute-button">IZVRŠI</button>
+                </center>
             </div>
-            <table>
-                <td>
-                    <button class="ui red button">PONIŠTI</button>
-                </td>
-                <td>
-                    <button class="ui green button">IZVRŠI</button>
-                </td>
-            </table>
-        </div>
-        <div class="box hist">
-            <div class="ui inverted segment">
-                <div class="ui inverted relaxed divided list">
-                    <div class="item">
-                    <div class="content">
-                        <div class="header">LODA</div>
-                        00000000
-                    </div>
-                    </div>
-                </div>
+            <div class="column">
+                <table class="ui selectable inverted table">
+                    <thead>
+                        <tr>
+                            <th width="20">REGISTAR</th>
+                            <th>VREDNOST</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>A</td>
+                            <td id="reg-a-val">null</td>                     
+                        </tr>
+                        <tr>
+                            <td>B</td>
+                            <td id="reg-b-val">null</td>                     
+                        </tr>
+                            <tr>
+                            <td>C</td>
+                            <td id="reg-c-val">null</td>                     
+                        </tr>
+                </table>
+            </div>
+            <div class="column">
+                <table class="ui selectable inverted table">
+                    <thead>
+                        <tr>
+                            <th width="20">ADRESA</th>
+                            <th>OPKOD</th>
+                            <th>OPERAND</th>                    
+                        </tr>
+                    </thead>
+                    <tbody id="ram">
+                </table>
             </div>
         </div>
-        <div class="box alu">
-            
-        </div>
-        <div class="box ram">
-            <table class="ui selectable inverted table">
-                <thead>
-                    <tr>
-                    <th>ADRESA</th>
-                    <th>OPKOD</th>
-                    <th>OPERAND</th>                    
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>NOP</td>
-                        <td>00000000</td>                        
-                    </tr>
-            </table>
-        </div>
-        <!--<img src="alu.svg" alt="">-->
+        <script>
+            $(document).ready(function() {
+                $('.ui.dropdown').dropdown();
+                refresh();
+            });
+            $('#execute-button').click(function() {
+                operation = $('#operation-input .text').text()
+                operand = $('#operand-input').val();
+                parse(operation, operand);
+                refresh();
+            });
+            function refresh() {
+                $('#reg-a-val').text(reg_A);
+                $('#reg-b-val').text(reg_B);
+                $('#reg-c-val').text(reg_C);
+                $('#ram').empty();
+                for (var x in RAM) {
+                    $('#ram').append(
+                        '<tr>' +
+                            '<td>' + x[0] + '</td>' +
+                            '<td>' + x[1] + '</td>' +
+                            '<td>' + x[2] + '</td>' +
+                        '</tr>'
+                    )
+                }
+            }
+    </script>
     </body>
 </html>
