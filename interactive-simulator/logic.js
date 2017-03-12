@@ -61,6 +61,7 @@ function parse (instruction,operand){
 			jmp(operand);
 		}
 
+		RAM.push([Program_Counter, instruction, operand]);
 		Program_Counter += 1;
 }
 

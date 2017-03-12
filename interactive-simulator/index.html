@@ -84,7 +84,8 @@
                 $('#reg-a-val').text(reg_A);
                 $('#reg-b-val').text(reg_B);
                 $('#reg-c-val').text(reg_C);
-                $('#ram').empty();
+                console.log(RAM);
+		$('#ram').empty();
                 for (var x in RAM) {
                     $('#ram').append(
                         '<tr>' +
