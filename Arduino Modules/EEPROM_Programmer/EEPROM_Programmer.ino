@@ -95,22 +95,22 @@ void writeByte(int data , int address){
             {
                 if(a==1)
                 {
-                    analogWrite(A0,HIGH);
+                    analogWrite(A0,1023);
                 }
                 else
                 {
-                    analogWrite(A0,LOW);
+                    analogWrite(A0,0);
                 }
             }
             else if(pin == 15)
             {
                 if(a==1)
                 {
-                    analogWrite(A1,HIGH);
+                    analogWrite(A1,1023);
                 }
                 else
                 {
-                    analogWrite(A1,LOW);
+                    analogWrite(A1,0);
                 }
 
             }
@@ -118,22 +118,22 @@ void writeByte(int data , int address){
             {
                 if(a==1)
                 {
-                    analogWrite(A2,HIGH);
+                    analogWrite(A2,1023);
                 }
                 else
                 {
-                    analogWrite(A2,LOW);
+                    analogWrite(A2,0);
                 }
             }
             else if(pin == 17)
             {
                 if(a==1)
                 {
-                    analogWrite(A3,HIGH);
+                    analogWrite(A3,1023);
                 }
                 else
                 {
-                    analogWrite(A3,LOW);
+                    analogWrite(A3,0);
                 }
 
             }
