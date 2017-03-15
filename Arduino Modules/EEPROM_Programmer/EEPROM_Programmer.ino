@@ -30,6 +30,7 @@ void toBinary(int num){
         num /= 2;
         s.push(rem);
         brojac++;
+        delay(10);
     }
     
     for(int i = 1 ; i<= 8-brojac;i++){
@@ -178,6 +179,7 @@ void setup() {
   for(int i = 0 ; i<size(data);i++){
 
        writeByte(data[i],i);
+       delay(1000);
       
   }
 
