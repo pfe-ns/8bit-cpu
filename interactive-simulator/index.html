@@ -18,6 +18,7 @@
                         <div class="text">NOP</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
+                            <div class="item">NOP</div>                            
                             <div class="item">LODA</div>
                             <div class="item">LODB</div>
                             <div class="item">READA</div>
@@ -84,14 +85,13 @@
                 $('#reg-a-val').text(reg_A);
                 $('#reg-b-val').text(reg_B);
                 $('#reg-c-val').text(reg_C);
-                console.log(RAM);
-		$('#ram').empty();
+                $('#ram').empty();
                 for (var x in RAM) {
                     $('#ram').append(
                         '<tr>' +
-                            '<td>' + x[0] + '</td>' +
-                            '<td>' + x[1] + '</td>' +
-                            '<td>' + x[2] + '</td>' +
+                            '<td>' + RAM[x][0] + '</td>' +
+                            '<td>' + RAM[x][1] + '</td>' +
+                            '<td>' + RAM[x][2] + '</td>' +
                         '</tr>'
                     )
                 }
