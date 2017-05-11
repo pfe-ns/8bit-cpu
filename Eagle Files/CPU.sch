@@ -11443,7 +11443,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="IC7" library="memory-sram" deviceset="CY62256LL-?*" device="P" technology="C"/>
 <part name="IC8" library="74xx-us" deviceset="74*283" device="N" technology="S"/>
 <part name="IC9" library="74xx-us" deviceset="74*283" device="N" technology="S"/>
-<part name="SUPPLY6" library="supply2" deviceset="GND" device=""/>
 <part name="IC10" library="74xx-us" deviceset="74*574" device="N" technology="HC"/>
 <part name="IC11" library="74xx-us" deviceset="74*541" device="N" technology="LS"/>
 <part name="SUPPLY8" library="supply2" deviceset="GND" device=""/>
@@ -11453,8 +11452,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="IC14" library="74xx-us" deviceset="74*04" device="N" technology="AS"/>
 <part name="IC15" library="74xx-us" deviceset="74*283" device="N" technology="S"/>
 <part name="IC16" library="74xx-us" deviceset="74*283" device="N" technology="S"/>
-<part name="SUPPLY10" library="supply2" deviceset="GND" device=""/>
-<part name="SUPPLY11" library="supply2" deviceset="GND" device=""/>
 <part name="IC18" library="ic-package" deviceset="DIL16" device=""/>
 <part name="IC17" library="ic-package" deviceset="DIL16" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
@@ -11562,7 +11559,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="IC7" gate="G$1" x="12.7" y="177.8"/>
 <instance part="IC8" gate="A" x="66.04" y="27.94" rot="R180"/>
 <instance part="IC9" gate="A" x="66.04" y="-5.08" rot="R180"/>
-<instance part="SUPPLY6" gate="GND" x="53.34" y="38.1"/>
 <instance part="IC10" gate="A" x="-40.64" y="30.48" rot="MR0"/>
 <instance part="IC11" gate="A" x="-86.36" y="30.48"/>
 <instance part="SUPPLY8" gate="GND" x="-27.94" y="15.24"/>
@@ -11579,8 +11575,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="IC14" gate="B" x="7.62" y="-165.1" rot="R180"/>
 <instance part="IC15" gate="A" x="-48.26" y="-68.58" rot="R180"/>
 <instance part="IC16" gate="A" x="-48.26" y="-109.22" rot="R180"/>
-<instance part="SUPPLY10" gate="GND" x="-60.96" y="-58.42"/>
-<instance part="SUPPLY11" gate="GND" x="-60.96" y="-58.42"/>
 <instance part="IC18" gate="G$1" x="-55.88" y="116.84" rot="R90"/>
 <instance part="IC17" gate="G$1" x="-91.44" y="116.84" rot="R90"/>
 <instance part="P+1" gate="VCC" x="-104.14" y="111.76"/>
@@ -11971,23 +11965,12 @@ We've spent an enormous amount of time creating and checking these footprints an
 <junction x="220.98" y="50.8"/>
 </segment>
 <segment>
-<pinref part="IC8" gate="A" pin="C4"/>
-<pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<junction x="53.34" y="40.64"/>
-</segment>
-<segment>
 <pinref part="IC10" gate="A" pin="OC"/>
 <pinref part="SUPPLY8" gate="GND" pin="GND"/>
 </segment>
 <segment>
 <pinref part="IC11" gate="A" pin="G2"/>
 <pinref part="SUPPLY9" gate="GND" pin="GND"/>
-</segment>
-<segment>
-<pinref part="IC15" gate="A" pin="C4"/>
-<pinref part="SUPPLY10" gate="GND" pin="GND"/>
-<pinref part="SUPPLY11" gate="GND" pin="GND"/>
-<junction x="-60.96" y="-55.88"/>
 </segment>
 <segment>
 <pinref part="IC17" gate="G$1" pin="GND"/>
@@ -12354,12 +12337,10 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="129.54" y1="2.54" x2="205.74" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="205.74" y1="2.54" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
 <junction x="205.74" y="66.04"/>
-<wire x1="129.54" y1="-132.08" x2="129.54" y2="-129.54" width="0.1524" layer="91"/>
 <pinref part="IC13" gate="E" pin="I"/>
 <junction x="17.78" y="-134.62"/>
-<wire x1="129.54" y1="-129.54" x2="129.54" y2="2.54" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="-134.62" x2="129.54" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="129.54" y1="-134.62" x2="17.78" y2="-134.62" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="-132.08" x2="129.54" y2="-134.62" width="0.1524" layer="91"/>
 <junction x="129.54" y="2.54"/>
 <junction x="78.74" y="2.54"/>
 </segment>
@@ -12460,7 +12441,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A2"/>
 <junction x="-99.06" y="40.64"/>
-<label x="-60.96" y="40.64" size="1.778" layer="95"/>
+<label x="-106.68" y="40.64" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC17" gate="G$1" pin="P1"/>
@@ -12503,7 +12484,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A3"/>
 <junction x="-99.06" y="38.1"/>
-<label x="-60.96" y="38.1" size="1.778" layer="95"/>
+<label x="-106.68" y="38.1" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC17" gate="G$1" pin="P2"/>
@@ -12560,7 +12541,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A4"/>
 <junction x="-99.06" y="35.56"/>
-<label x="-60.96" y="35.56" size="1.778" layer="95"/>
+<label x="-106.68" y="35.56" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC17" gate="G$1" pin="P3"/>
@@ -12603,7 +12584,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A5"/>
 <junction x="-99.06" y="33.02"/>
-<label x="-60.96" y="33.02" size="1.778" layer="95"/>
+<label x="-106.68" y="33.02" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC18" gate="G$1" pin="P0"/>
@@ -12646,7 +12627,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A6"/>
 <junction x="-99.06" y="30.48"/>
-<label x="-60.96" y="30.48" size="1.778" layer="95"/>
+<label x="-106.68" y="30.48" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC18" gate="G$1" pin="P1"/>
@@ -12689,7 +12670,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A7"/>
 <junction x="-99.06" y="27.94"/>
-<label x="-60.96" y="27.94" size="1.778" layer="95"/>
+<label x="-106.68" y="27.94" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC18" gate="G$1" pin="P2"/>
@@ -12732,7 +12713,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A8"/>
 <junction x="-99.06" y="25.4"/>
-<label x="-60.96" y="25.4" size="1.778" layer="95"/>
+<label x="-106.68" y="25.4" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC18" gate="G$1" pin="P3"/>
@@ -12775,7 +12756,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <segment>
 <pinref part="IC11" gate="A" pin="A1"/>
 <junction x="-99.06" y="43.18"/>
-<label x="-60.96" y="43.18" size="1.778" layer="95"/>
+<label x="-106.68" y="43.18" size="1.778" layer="95" rot="R180"/>
 </segment>
 <segment>
 <pinref part="IC17" gate="G$1" pin="P0"/>
@@ -12919,12 +12900,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="53.34" y1="-10.16" x2="30.48" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="-10.16" x2="20.32" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="-10.16" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="IC10" gate="A" pin="5D"/>
 <junction x="-27.94" y="33.02"/>
 <wire x1="-27.94" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="IC16" gate="A" pin="S4"/>
-<wire x1="-5.08" y1="33.02" x2="0" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="-60.96" y1="-114.3" x2="-73.66" y2="-114.3" width="0.1524" layer="91"/>
 <wire x1="-73.66" y1="-114.3" x2="-73.66" y2="-101.6" width="0.1524" layer="91"/>
 <wire x1="-73.66" y1="-101.6" x2="-73.66" y2="-17.78" width="0.1524" layer="91"/>
@@ -12971,12 +12951,11 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="53.34" y1="-15.24" x2="25.4" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="25.4" y1="-15.24" x2="15.24" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="15.24" y1="-15.24" x2="15.24" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="15.24" y1="27.94" x2="0" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="15.24" y1="27.94" x2="-10.16" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="IC10" gate="A" pin="7D"/>
 <junction x="-27.94" y="27.94"/>
 <wire x1="-27.94" y1="27.94" x2="-10.16" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="IC16" gate="A" pin="S2"/>
-<wire x1="-10.16" y1="27.94" x2="0" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="-60.96" y1="-119.38" x2="-78.74" y2="-119.38" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="-119.38" x2="-78.74" y2="-111.76" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="-111.76" x2="-78.74" y2="-22.86" width="0.1524" layer="91"/>
@@ -13478,6 +13457,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <wire x1="48.26" y1="45.72" x2="78.74" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="45.72" x2="78.74" y2="40.64" width="0.1524" layer="91"/>
 <junction x="53.34" y="7.62"/>
+<junction x="78.74" y="40.64"/>
 </segment>
 </net>
 <net name="N$74" class="0">
@@ -13798,25 +13778,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <approved hash="114,1,38.1,98.9965,IC21,D,I0,,,"/>
 <approved hash="114,1,38.1,98.9965,IC21,D,I1,,,"/>
 <approved hash="104,1,-121.92,71.12,IC22,VCC+,VCC,,,"/>
-<approved hash="208,1,78.74,129.54,GND,sup,,,,"/>
-<approved hash="208,1,167.64,50.8,GND,sup,,,,"/>
-<approved hash="208,1,68.58,53.34,GND,sup,,,,"/>
-<approved hash="208,1,119.38,53.34,GND,sup,,,,"/>
-<approved hash="208,1,220.98,50.8,GND,sup,,,,"/>
-<approved hash="208,1,53.34,40.64,GND,out,,,,"/>
-<approved hash="208,1,53.34,40.64,GND,sup,,,,"/>
-<approved hash="208,1,-27.94,17.78,GND,sup,,,,"/>
-<approved hash="208,1,-99.06,17.78,GND,sup,,,,"/>
-<approved hash="208,1,-60.96,-55.88,GND,out,,,,"/>
-<approved hash="208,1,-60.96,-55.88,GND,sup,,,,"/>
-<approved hash="208,1,-60.96,-55.88,GND,sup,,,,"/>
-<approved hash="208,1,-81.28,109.22,GND,sup,,,,"/>
-<approved hash="208,1,-45.72,109.22,GND,sup,,,,"/>
-<approved hash="208,1,279.4,180.34,GND,sup,,,,"/>
-<approved hash="208,1,78.74,7.62,GND,sup,,,,"/>
-<approved hash="208,1,27.94,114.3,GND,sup,,,,"/>
-<approved hash="208,1,-40.64,175.26,GND,sup,,,,"/>
-<approved hash="208,1,-2.54,86.36,GND,sup,,,,"/>
 <approved hash="206,1,53.34,15.24,N$27,,,,,"/>
 <approved hash="206,1,-60.96,-73.66,N$27,,,,,"/>
 <approved hash="206,1,53.34,17.78,N$28,,,,,"/>
@@ -13832,11 +13793,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <approved hash="206,1,53.34,-17.78,N$34,,,,,"/>
 <approved hash="206,1,-60.96,-121.92,N$34,,,,,"/>
 <approved hash="106,1,50.8,78.74,N$76,,,,,"/>
-<approved hash="108,1,309.88,152.4,GND,,,,,"/>
-<approved hash="110,1,0,33.02,N$29,N$31,,,,"/>
-<approved hash="110,1,0,33.02,N$29,N$31,,,,"/>
-<approved hash="110,1,0,27.94,N$29,N$33,,,,"/>
-<approved hash="110,1,0,27.94,N$29,N$33,,,,"/>
 <approved hash="111,1,91.44,60.96,N$1,,,,,"/>
 <approved hash="111,1,91.44,63.5,N$1,,,,,"/>
 <approved hash="111,1,91.44,66.04,N$1,,,,,"/>
@@ -13845,17 +13801,8 @@ We've spent an enormous amount of time creating and checking these footprints an
 <approved hash="111,1,91.44,73.66,N$1,,,,,"/>
 <approved hash="111,1,91.44,76.2,N$1,,,,,"/>
 <approved hash="111,1,129.54,142.24,N$72,,,,,"/>
-<approved hash="112,1,-60.96,-57.15,,,,,,"/>
 <approved hash="111,1,-63.5,127,N$53,,,,,"/>
 <approved hash="111,1,25.4,99.06,N$76,,,,,"/>
-<approved hash="111,1,287.02,162.56,BUS0,,,,,"/>
-<approved hash="111,1,289.56,157.48,BUS1,,,,,"/>
-<approved hash="111,1,292.1,152.4,BUS2,,,,,"/>
-<approved hash="111,1,287.02,152.4,BUS0,,,,,"/>
-<approved hash="111,1,304.8,152.4,BUS7,,,,,"/>
-<approved hash="111,1,299.72,152.4,BUS5,,,,,"/>
-<approved hash="111,1,302.26,157.48,BUS6,,,,,"/>
-<approved hash="111,1,304.8,162.56,BUS7,,,,,"/>
 <approved hash="111,1,-81.28,-111.76,N$34,,,,,"/>
 <approved hash="111,1,-78.74,-106.68,N$33,,,,,"/>
 <approved hash="112,1,-77.47,-106.68,,,,,,"/>
@@ -13885,14 +13832,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 <approved hash="113,1,299.398,176.53,LED6,,,,,"/>
 <approved hash="113,1,301.938,176.53,LED7,,,,,"/>
 <approved hash="113,1,304.478,176.53,LED8,,,,,"/>
-<approved hash="113,1,281.94,168.635,R1,,,,,"/>
-<approved hash="113,1,284.48,163.555,R2,,,,,"/>
-<approved hash="113,1,287.02,158.475,R3,,,,,"/>
-<approved hash="113,1,289.56,153.395,R4,,,,,"/>
-<approved hash="113,1,302.26,153.395,R5,,,,,"/>
-<approved hash="113,1,304.8,158.475,R6,,,,,"/>
-<approved hash="113,1,307.34,163.555,R7,,,,,"/>
-<approved hash="113,1,309.88,168.635,R8,,,,,"/>
 <approved hash="113,1,-86.36,-115.845,R9,,,,,"/>
 <approved hash="113,1,-83.82,-110.765,R10,,,,,"/>
 <approved hash="113,1,-81.28,-105.685,R11,,,,,"/>
