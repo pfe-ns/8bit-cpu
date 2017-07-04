@@ -8370,6 +8370,56 @@ naming: grid - package width</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="pinhead" urn="urn:adsk.eagle:library:325">
+<description>&lt;b&gt;Pin Header Connectors&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="1X01" library_version="1">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="0.635" x2="1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="0.635" x2="-1.27" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="-1.27" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<pad name="1" x="0" y="0" drill="1.016" shape="octagon"/>
+<text x="-1.3462" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="PINHD1" library_version="1">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-6.35" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="3.175" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PINHD-1X1" prefix="JP" uservalue="yes" library_version="1">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD1" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X01">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -8517,7 +8567,8 @@ naming: grid - package width</description>
 <part name="R47" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="MELF0102AX"/>
 <part name="SUPPLY20" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 <part name="IC17" library="74xx-us" library_urn="urn:adsk.eagle:library:88" deviceset="74*32" device="N" technology="LS"/>
-<part name="IC19" library="74xx-eu" library_urn="urn:adsk.eagle:library:85" deviceset="74*04" device="N" technology="HC"/>
+<part name="VCC" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device=""/>
+<part name="GND" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X1" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8679,7 +8730,8 @@ naming: grid - package width</description>
 <instance part="IC15" gate="C" x="-187.96" y="-45.72" rot="R270"/>
 <instance part="IC15" gate="D" x="-172.72" y="-45.72" rot="R270"/>
 <instance part="IC17" gate="A" x="-205.74" y="-66.04" rot="R180"/>
-<instance part="IC19" gate="A" x="-231.14" y="-55.88" rot="R90"/>
+<instance part="VCC" gate="G$1" x="-142.24" y="-66.04"/>
+<instance part="GND" gate="G$1" x="-142.24" y="-76.2"/>
 </instances>
 <busses>
 </busses>
@@ -10810,18 +10862,10 @@ naming: grid - package width</description>
 <pinref part="IC17" gate="A" pin="O"/>
 <wire x1="-231.14" y1="-66.04" x2="-218.44" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="-218.44" y="-66.04"/>
-<pinref part="IC19" gate="A" pin="I"/>
-<junction x="-231.14" y="-66.04"/>
-</segment>
-</net>
-<net name="N$162" class="0">
-<segment>
 <pinref part="IC13" gate="B" pin="A"/>
 <wire x1="-220.98" y1="-7.62" x2="-231.14" y2="-7.62" width="0.1524" layer="91"/>
 <junction x="-220.98" y="-7.62"/>
-<wire x1="-231.14" y1="-45.72" x2="-231.14" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="IC19" gate="A" pin="O"/>
-<junction x="-231.14" y="-45.72"/>
+<wire x1="-231.14" y1="-66.04" x2="-231.14" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
